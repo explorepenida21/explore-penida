@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "title": "Explore Penida | Tour & Travel Nusa Penida",
+    "description": "Jelajahi keindahan Nusa Penida dengan paket tour eksklusif. Tour Timur, Tour Barat, dan Mix Tour dengan fasilitas lengkap.",
+    "keywords": "nusa penida, tour bali, wisata bali, kelingking beach, diamond beach, tour penida"
+  },
+  "nav": {
+    "home": "Beranda",
+    "packages": "Paket Tour",
+    "destinations": "Destinasi",
+    "booking": "Booking",
+    "blog": "Blog",
+    "contact": "Kontak"
+  },
+  "hero": {
+    "subtitle": "Pulau Surga di Timur Bali",
+    "title": "Explore Penida",
+    "description": "Jelajahi keindahan alam yang menakjubkan di Nusa Penida dengan paket tour eksklusif kami",
+    "cta": "Pesan Sekarang",
+    "ctaSecondary": "Lihat Paket Tour"
+  },
+  "stats": {
+    "tourists": "Turis",
+    "rating": "Rating",
+    "destinations": "Destinasi",
+    "experience": "Tahun Pengalaman"
+  },
+  "packages": {
+    "title": "Paket Tour",
+    "subtitle": "Pilihan paket yang sesuai dengan keinginan Anda",
+    "all": "Semua Paket",
+    "eastTour": "Tour Timur",
+    "westTour": "Tour Barat",
+    "mixTour": "Mix Tour",
+    "perPerson": "/org",
+    "viewDetails": "Lihat Detail",
+    "bookNow": "Pesan Sekarang",
+    "included": "Termasuk",
+    "notIncluded": "Tidak Termasuk",
+    "facilities": "Fasilitas",
+    "itinerary": "Itinerary",
+    "selectPackage": "Pilih Paket",
+    "selectDate": "Pilih Tanggal",
+    "guests": "Tamu",
+    "fullName": "Nama Lengkap",
+    "email": "Email",
+    "phone": "No. HP / WhatsApp",
+    "notes": "Catatan (Opsional)",
+    "notesPlaceholder": "Permintaan khusus, alergi makanan, dll.",
+    "totalPayment": "Total Pembayaran",
+    "book": "Booking Sekarang",
+    "processing": "Memproses...",
+    "loadingPayment": "Memuat Payment Gateway...",
+    "securePayment": "Pembayaran aman via Midtrans. Data Anda akan dienkripsi."
+  },
+  "destinations": {
+    "title": "Destinasi",
+    "subtitle": "Jelajahi keindahan alam yang menakjubkan",
+    "all": "Semua",
+    "beach": "Pantai",
+    "naturalPool": "Kolam Alam",
+    "lake": "Danau",
+    "rating": "Rating",
+    "location": "Lokasi",
+    "facilities": "Fasilitas",
+    "coordinates": "Koordinat",
+    "bookTour": "Booking Tour Sekarang"
+  },
+  "includes": {
+    "title": "Yang Termasuk",
+    "subtitle": "Fasilitas lengkap untuk perjalanan Anda",
+    "transportation": "Transportasi",
+    "transportationDesc": "Kapal speedboat PP + Mobil penjemputan",
+    "meals": "Makan Siang",
+    "mealsDesc": "Makan siang prasmanan di restoran lokal",
+    "tickets": "Tiket Destinasi",
+    "ticketsDesc": "Semua tiket masuk tempat wisata",
+    "guide": "Guide Lokal",
+    "guideDesc": "Guide berpengalaman yang熟悉 daerah",
+    "insurance": "Asuransi",
+    "insuranceDesc": "Asuransi perjalanan selama tour"
+  },
+  "testimonials": {
+    "title": "Kata Mereka",
+    "subtitle": "Testimoni dari traveler yang sudah merasakan keindahan Nusa Penida"
+  },
+  "cta": {
+    "title": "Siap Menjelajahi Nusa Penida?",
+    "subtitle": "Booking sekarang dan rasakan pengalaman tak terlupakan",
+    "button": "Booking Sekarang"
+  },
+  "footer": {
+    "description": "Tour & travel terpercaya untuk menjelajahi keindahan Nusa Penida",
+    "quickLinks": "Tautan Cepat",
+    "contactUs": "Hubungi Kami",
+    "followUs": "Ikuti Kami",
+    "copyright": "© 2024 Explore Penida. Hak cipta dilindungi."
+  },
+  "contact": {
+    "title": "Hubungi Kami",
+    "subtitle": "Jangan ragu untuk menghubungi kami",
+    "name": "Nama",
+    "email": "Email",
+    "message": "Pesan",
+    "send": "Kirim Pesan",
+    "sending": "Mengirim...",
+    "success": "Pesan berhasil terkirim!",
+    "error": "Terjadi kesalahan. Silakan coba lagi."
+  },
+  "booking": {
+    "title": "Booking Tour",
+    "subtitle": "Isi formulir di bawah untuk booking paket tour",
+    "success": "Booking berhasil!",
+    "error": "Terjadi kesalahan. Silakan coba lagi."
+  },
+  "errors": {
+    "required": "Wajib diisi",
+    "invalidEmail": "Format email tidak valid",
+    "invalidPhone": "Format nomor HP tidak valid",
+    "selectPackage": "Pilih paket tour terlebih dahulu",
+    "selectDate": "Pilih tanggal tour",
+    "dateInPast": "Tanggal tour tidak boleh di masa lalu",
+    "minGuests": "Jumlah tamu minimal 1",
+    "maxGuests": "Maksimal 15 tamu per booking"
+  },
+  "language": {
+    "switch": "Ganti Bahasa"
+  }
+}

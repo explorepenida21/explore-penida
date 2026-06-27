@@ -1,0 +1,184 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Paket {
+  id           String    @id @default(cuid())
+  slug         String    @unique
+  nama         String
+  tipe         String    // "timur" | "barat" | "mix"
+  harga        Int
+  deskripsi    String
+  includes     String[]  // array: ["Boat PP", "Makan siang", ...]
+  destinasi    String[]  // array nama destinasi
+  foto         String[]  // array URL cloudinary
+  isActive     Boolean   @default(true)
+  createdAt    DateTime @default(now())
+  bookings     Booking[]
+  schedules    JadwalTour[]
+}
+
+model JadwalTour {
+  id         String   @id @default(cuid())
+  paketId    String
+  paket      Paket    @relation(fields: [paketId], references: [id])
+  tanggal    DateTime @db.Date
+  kapasitas  Int      @default(15)
+  tersisa    Int      @default(15)
+  isTutup    Boolean  @default(false)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  @@unique([paketId, tanggal])
+  @@index([tanggal])
+}
+
+model Booking {
+  id            String   @id @default(cuid())
+  kodeBooking   String   @unique @default(cuid())
+  paketId       String
+  paket         Paket    @relation(fields: [paketId], references: [id])
+  namaPemesan   String
+  email         String
+  noHp          String
+  tanggalTour   DateTime
+  jumlahOrang   Int
+  totalHarga    Int
+  status        String   @default("pending") // "pending"|"paid"|"confirmed"|"done"|"cancelled"
+  paymentStatus String   @default("unpaid")  // "unpaid"|"paid"|"refunded"
+  midtransOrderId String? @unique
+  snapToken     String?
+  catatan       String?
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Testimoni {
+  id        String   @id @default(cuid())
+  nama      String
+  foto      String?
+  rating    Int
+  komentar  String
+  paketNama String
+  isShow    Boolean  @default(true)
+  createdAt DateTime @default(now())
+}
+
+model BlogPost {
+  id        String   @id @default(cuid())
+  judul     String
+  slug      String   @unique
+  konten    String
+  thumbnail String?
+  isPublish Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
+model AdminUser {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String   // bcrypt hash
+  nama      String
+  role      String   @default("admin")
+  createdAt DateTime @default(now())
+}
+
+model ChatFAQ {
+  id       String @id @default(cuid())
+  keyword  String
+  jawaban  String
+  isActive Boolean @default(true)
+}
+
+// Website Settings - JSON based configuration
+model WebsiteSettings {
+  id        String   @id @default("default")
+  heroBadge String   @default("Pulau Surga di Timur Bali")
+  heroTitle String   @default("Explore Penida")
+  heroSubtitle String @default("Jelajahi keindahan alam yang memukau dengan paket tour eksklusif pilihan terbaik kami")
+  heroImage String   @default("https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=85")
+  heroVideoUrl String? // Optional video background
+  
+  // Stats
+  stat1Value Int      @default(5000)
+  stat1Label String   @default("Tamu Puas")
+  stat1Icon  String    @default("👥")
+  
+  stat2Value Int      @default(15)
+  stat2Label String   @default("Destinasi Pilihan")
+  stat2Icon  String    @default("📍")
+  
+  stat3Value Float    @default(4.9)
+  stat3Label String   @default("Rating Bintang")
+  stat3Icon  String   @default("⭐")
+  
+  stat4Value Int      @default(100)
+  stat4Label String   @default("% Aman & Nyaman")
+  stat4Icon  String   @default("🛡️")
+  
+  // Contact Info
+  whatsapp   String   @default("6281234567890")
+  email      String   @default("info@explorepenida.com")
+  alamat     String   @default("Nusa Penida, Klungkung, Bali")
+  
+  // Social Media
+  instagram  String?
+  facebook   String?
+  tiktok     String?
+  
+  // Footer
+  footerDescription String @default("Tour & travel terpercaya untuk menjelajahi keindahan Nusa Penida")
+  footerCopyright   String @default("© 2024 Explore Penida. Hak cipta dilindungi.")
+  
+  // Meta
+  metaTitle       String @default("Explore Penida | Tour & Travel Nusa Penida")
+  metaDescription String @default("Jelajahi keindahan Nusa Penida")
+  metaKeywords    String @default("nusa penida, tour, travel, bali, paket tour")
+  
+  // Logo
+  logoUrl         String?
+
+  // Favicon
+  faviconUrl      String?
+
+  // API Keys Configuration
+  midtransServerKey  String?
+  midtransClientKey  String?
+  midtransIsProduction Boolean @default(false)
+  fonnteToken        String?
+  adminWaNumber      String?
+  cloudinaryCloudName String?
+  cloudinaryApiKey   String?
+  cloudinaryApiSecret String?
+  openRouterApiKey   String?
+
+  updatedAt DateTime @updatedAt
+}
+
+// Destinasi/Gallery Model
+model Destinasi {
+  id        String   @id @default(cuid())
+  nama      String   @unique
+  slug      String   @unique
+  foto      String[] // array URL cloudinary
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+// Fasilitas/Include Items
+model Fasilitas {
+  id        String   @id @default(cuid())
+  emoji     String
+  title     String
+  deskripsi String
+  urutan    Int      @default(0)
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
