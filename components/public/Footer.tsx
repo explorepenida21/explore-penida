@@ -23,7 +23,7 @@ export default function Footer() {
             <p className="text-gray-400 mb-8">Tour & travel terpercaya untuk menjelajahi keindahan Nusa Penida</p>
             <div className="flex gap-3">
               <a href="https://instagram.com/explorepenida" className="w-12 h-12 bg-gray-800 hover:bg-pink-500 rounded-xl flex items-center justify-center transition-all">📷</a>
-              <a href="https://wa.me/6281234567890" className="w-12 h-12 bg-gray-800 hover:bg-green-500 rounded-xl flex items-center justify-center transition-all">💬</a>
+              <a href="https://wa.me/628131819818" className="w-12 h-12 bg-gray-800 hover:bg-green-500 rounded-xl flex items-center justify-center transition-all">💬</a>
             </div>
           </div>
           <div>
