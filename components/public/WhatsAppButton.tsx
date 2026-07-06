@@ -1,6 +1,6 @@
 export default function WhatsAppButton() {
-  const phoneNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '6281234567890'
-  const message = encodeURIComponent('Halo, saya ingin咨询 tentang tour ke Nusa Penida')
+  const phoneNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '628131819818'
+  const message = encodeURIComponent('Halo, saya ingin tanya tentang tour ke Nusa Penida')
   const waUrl = `https://wa.me/${phoneNumber}?text=${message}`
 
   return (
