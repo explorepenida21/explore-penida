@@ -442,10 +442,10 @@ const handleSubmit = async () => {
                 type="button"
                 onClick={handleSubmit}
                 disabled={submitting}
-                className="flex-1 py-3 bg-gradient-to-r from-teal-500 to-teal-600 text-white rounded-xl font-bold hover:shadow-lg disabled:opacity-50"
-              >
-                {submitting ? 'Memproses...' : '🎫 Bayar Sekarang'}
+                className="flex-1 py-3 bg-green-500 text-white rounded-xl font-bold hover:bg-green-600 hover:shadow-lg disabled:opacity-50 flex items-center justify-center gap-2">
+                {submitting ? 'Memproses...' : '💬 Bayar via WhatsApp'}
               </button>
+
             )}
           </div>
         </div>
