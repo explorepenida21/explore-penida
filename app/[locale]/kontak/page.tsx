@@ -32,8 +32,8 @@ export default function KontakPage() {
                   <span className='text-2xl'>📱</span>
                   <div>
                     <p className='font-semibold'>WhatsApp</p>
-                    <a href='https://wa.me/6281234567890' className='text-teal-500 hover:text-teal-600'>+62 812 3456 7890</a>
-                  </div>
+                    <a href='https://wa.me/628131819818' className='text-teal-500 hover:text-teal-600'>+62 813-1819-818</a>
+                   </div>
                 </div>
                 <div className='flex items-center gap-4'>
                   <span className='text-2xl'>📧</span>
