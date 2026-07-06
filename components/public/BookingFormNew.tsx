@@ -110,26 +110,68 @@ export default function BookingFormNew() {
     setCurrentStep(s => Math.max(s - 1, 1))
   }
 
-  const handleSubmit = async () => {
-    if (!validate(2)) return
-    setSubmitting(true)
-    try {
-      const res = await fetch('/api/booking', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          paketId: formData.paketId,
-          tanggalTour: formData.tanggalTour ? formData.tanggalTour.toISOString() : null,
-          jumlahOrang: formData.jumlahOrang,
-          namaPemesan: formData.namaPemesan,
-          email: formData.email,
-          noHp: formData.noHp,
-          catatan: formData.catatan,
-        }),
-      })
-      const json = await res.json()
+  const handleWhatsAppPayment = () => {
+  if (!validate(2)) return
 
-      console.log('[Booking] Response:', json)
+  const phoneNumber = process.env.NEXT_PUBLIC_WA_NUMBER || '628131819818'
+  const tanggal = formData.tanggalTour
+    ? formData.tanggalTour.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' })
+    : '-'
+
+  const message = `🔖 *PESANAN TOUR NUSA PENIDA*
+━━━━━━━━━━━━━━━━━━
+
+📦 *Paket:* ${selectedPaket?.nama || '-'}
+💰 *Harga/pax:* ${formatRp(selectedPaket?.harga || 0)}
+👥 *Jumlah:* ${formData.jumlahOrang} orang
+💵 *Total:* ${formatRp(total)}
+
+📅 *Tanggal Tour:* ${tanggal}
+
+👤 *Data Pemesan:*
+• Nama: ${formData.namaPemesan}
+• Email: ${formData.email}
+• WhatsApp: ${formData.noHp}
+${formData.catatan ? `📝 *Catatan:* ${formData.catatan}` : ''}
+
+━━━━━━━━━━━━━━━━━━
+Mohon infokan langkah pembayaran selanjutnya. Terima kasih! 🙏`
+
+  const encodedMessage = encodeURIComponent(message)
+  const waUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`
+  window.open(waUrl, '_blank')
+}
+
+const handleSubmit = async () => {
+  if (!validate(2)) return
+  setSubmitting(true)
+  try {
+    const res = await fetch('/api/booking', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        paketId: formData.paketId,
+        tanggalTour: formData.tanggalTour ? formData.tanggalTour.toISOString() : null,
+        jumlahOrang: formData.jumlahOrang,
+        namaPemesan: formData.namaPemesan,
+        email: formData.email,
+        noHp: formData.noHp,
+        catatan: formData.catatan,
+      }),
+    })
+    const json = await res.json()
+    console.log('[Booking] Response:', json)
+
+    // Redirect to WhatsApp
+    handleWhatsAppPayment()
+  } catch (e) {
+    console.error('[Booking] Error:', e)
+    alert('Terjadi kesalahan. Silakan coba lagi.')
+  } finally {
+    setSubmitting(false)
+  }
+}
+
 
       // Check if redirectUrl exists
       if (json.redirectUrl) {
