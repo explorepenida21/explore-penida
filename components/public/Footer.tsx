@@ -46,8 +46,8 @@ export default function Footer() {
           <div>
             <h4 className="text-lg font-bold mb-6 text-white">Hubungi Kami</h4>
             <div className="space-y-4">
-              <p className="text-gray-400 font-medium">💬 +62 812 3456 7890</p>
-              <p className="text-gray-400 font-medium">📧 info@explorepenida.com</p>
+              <p className="text-gray-400 font-medium">💬 +62 813-1819-818</p>
+              <p className="text-gray-400 font-medium">📧 explorepenida.id@gmail.com</p>
               <p className="text-gray-400 font-medium">📍 Nusa Penida, Klungkung, Bali</p>
             </div>
           </div>
