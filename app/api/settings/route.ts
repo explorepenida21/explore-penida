@@ -18,7 +18,7 @@ export async function GET() {
           heroBadge: 'Pulau Surga di Timur Bali',
           heroTitle: 'Explore Penida',
           heroSubtitle: 'Jelajahi keindahan alam yang memukau dengan paket tour eksklusif pilihan terbaik kami',
-          heroImage: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=1920&q=85',
+          heroImage: 'https://unsplash.com/photos/an-aerial-view-of-a-beach-and-a-cliff-TDlIx65AlS8?w=1920&q=85',
           heroVideoUrl: 'https://res.cloudinary.com/dqkicbuer/video/upload/v1782916096/02177847932790700000000000000000000ffffc0a884a929e2c6_1_ekl6oc.mp4',
           logoUrl: null,
           faviconUrl: null,
