@@ -33,8 +33,8 @@ export default function CTASection() {
         </p>
         <div className="flex flex-col sm:flex-row gap-6 justify-center">
           <Link href={`${localePrefix}/booking`} className="px-12 py-5 bg-gradient-to-r from-teal-500 to-teal-600 text-white font-bold text-lg rounded-full hover:shadow-2xl hover:shadow-teal-500/50 transition-all">🎫 {locale === 'id' ? 'Booking Sekarang' : 'Book Now'}</Link>
-          <a href="https://wa.me/6281234567890" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-green-500 text-white font-bold text-lg rounded-full hover:bg-green-600 transition-all flex items-center justify-center gap-3">💬 WhatsApp</a>
-        </div>
+          <a href="https://wa.me/628131819818" target="_blank" rel="noopener noreferrer" className="px-12 py-5 bg-green-500 text-white font-bold text-lg rounded-full hover:bg-green-600 transition-all flex items-center justify-center gap-3">💬 WhatsApp</a>
+         </div>
         <div className="flex flex-wrap justify-center gap-8 mt-16 text-white/90 text-sm font-medium">
           <div className="flex items-center gap-2">🛡️ {locale === 'id' ? 'Asuransi Terinclude' : 'Insurance Included'}</div>
           <div className="flex items-center gap-2">👨‍✈️ {locale === 'id' ? 'Guide Berpengalaman' : 'Experienced Guide'}</div>
