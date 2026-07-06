@@ -45,11 +45,6 @@ export default function BookingFormNew() {
   })
   const [errors, setErrors] = useState<FormErrors>({})
 
-  useEffect(() => {
-    fetchPakets()
-    loadMidtrans()
-  }, [])
-
   const loadMidtrans = () => {
     if (typeof window === 'undefined') return
     const script = document.getElementById('snap-script')
